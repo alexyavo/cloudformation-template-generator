@@ -117,7 +117,7 @@ class CloudFormation_UT extends FunSpec with Matchers{
       val customResource = `AWS::CloudFormation::CustomResource`(
         name = "TestResource",
         ServiceToken = "TestToken",
-        Parameters = Some(Map("Hi" -> "There"))
+        Parameters = Some(Map("Hi" -> JsonWritable("There")))
       )
 
       val expectedJson =
@@ -146,8 +146,8 @@ class CloudFormation_UT extends FunSpec with Matchers{
         name = "TestResource",
         ServiceToken = "TestToken",
         Parameters = Some(Map(
-          "Hi" -> "There",
-          "Number" -> 1))
+          "Hi" -> JsonWritable("There"),
+          "Number" -> JsonWritable(1)))
       )
 
       val expectedJson =
@@ -212,7 +212,7 @@ class CloudFormation_UT extends FunSpec with Matchers{
         name = "TestResource",
         ServiceToken = "TestToken",
         Parameters = Some(Map(
-          "AmiNamePrefix" -> "mon-amzn-2",
+          "AmiNamePrefix" -> JsonWritable("mon-amzn-2"),
           "Region" -> `Fn::Sub`("${AWS::Region}")
         ))
       )
