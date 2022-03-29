@@ -3,10 +3,13 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [3.11] 2022-03-29
+  - Scala 2.13 compatability.
+
 ## [3.10.3] 2021-05-21
   - IMPORTANT: With this release, we move to publishing to Maven Central instead of Bintray (since it is gone), and renamed the group ID in Maven Central to `com.bayer`.  But the Scala/Java package names are still monsanto.
   - Added tags to IAM (see [#280](https://github.com/MonsantoCo/cloudformation-template-generator/pull/280))
-  
+
 ## [3.10.2] 2021-05-20
   - Changes to add Nodejs14.x runtime (see [#281](https://github.com/MonsantoCo/cloudformation-template-generator/pull/281))
   - Sonotype switch (see [#282](https://github.com/MonsantoCo/cloudformation-template-generator/pull/282))
@@ -317,7 +320,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 
--   Improved EIP model to better handle VPC vs Classic EIPs.  Changes are backwards compatible, but 
+-   Improved EIP model to better handle VPC vs Classic EIPs.  Changes are backwards compatible, but
         existing methods are now deprecated.
 
 -   Most functions updated to use `Token[ConditionRef]` instead of `Token[String]`
